@@ -2,7 +2,7 @@ name: CI
 on: [push]
 jobs:
   build:
-    runs-on: dohubin/synologywireguardbuilderdocker
+    runs-on: dohubin/synologywireguardbuilderdocker:latest
     steps:
         - name: Checkout Project
           uses: actions/checkout@v1
