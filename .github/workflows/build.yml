@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-18.04 # linux required if you want to use docker
     steps:
     # Those steps are executed directly on the VM
-    - run: ls /
     - run: echo $HOME
     - name: BUILD BASH
-      run: ls -lah
     # Those steps are actions, which may run inside a container
     - uses: actions/checkout@v1
+    - run: ls -lah
+
 
