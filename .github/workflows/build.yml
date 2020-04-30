@@ -5,8 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     container: dohubin/synologywireguardbuilderdocker:latest
     steps:
-      - run: |
-          echo This job does specify a container.
-          echo It runs in the container instead of the VM.
-        name: Run in container
-    
+      - name: BUILD
+        run: |
+            IS_IN_CONTAINER=1
+            PACKAGE_ARCH=apollolake
+            DSM_VER=6.2
+            bash build.sh
