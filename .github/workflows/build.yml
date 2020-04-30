@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     container: dohubin/synologywireguardbuilderdocker:latest
     steps:
-      - name: BUILD
+      - name: BUILDq
         run: |
             IS_IN_CONTAINER=1
             PACKAGE_ARCH=apollolake
