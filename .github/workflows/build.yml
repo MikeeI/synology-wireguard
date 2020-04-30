@@ -5,10 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     container: dohubin/synologywireguardbuilderdocker:latest
     steps:
-      - name: BUILDq
+      # Those steps are executed directly on the VM
+      - run: ls /
+      - run: echo $HOME
+      - name: Add a file
+        run: touch $HOME/stuff.txt
+      # Those steps are actions, which may run inside a container
       - uses: actions/checkout@v1
-      - run: |
-            IS_IN_CONTAINER=1
-            PACKAGE_ARCH=apollolake
-            DSM_VER=6.2
-            bash build.sh
+      - uses: ./.github/actions/my-action
+      - uses: docker://continuumio/anaconda3:2019.07
