@@ -2,6 +2,7 @@ name: CI
 on: [push]
 jobs:
   myjob:
+    container: dohubin/synologywireguardbuilderdocker:latest
     runs-on: ubuntu-18.04 # linux required if you want to use docker
     steps:
     # Those steps are executed directly on the VM
@@ -15,5 +16,4 @@ jobs:
           PACKAGE_ARCH=apollolake
           DSM_VER=6.2
     - uses: actions/checkout@v1
-    
-    - uses: docker://dohubin/synologywireguardbuilderdocker:latest
+
