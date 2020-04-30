@@ -14,7 +14,6 @@ jobs:
           IS_IN_CONTAINER=1
           PACKAGE_ARCH=apollolake
           DSM_VER=6.2
-          bash build.sh
     - uses: actions/checkout@v1
     
     - uses: docker://dohubin/synologywireguardbuilderdocker:latest
