@@ -13,8 +13,8 @@ jobs:
     # Those steps are executed directly on the VM
     - run: ls /
     - run: echo $HOME
-    - name: Add a file
-      run: touch $HOME/stuff.txt
+    - name: BUILD BASH
+      run: ls -lah
     # Those steps are actions, which may run inside a container
     - uses: actions/checkout@v1
 
