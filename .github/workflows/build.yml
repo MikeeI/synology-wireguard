@@ -1,0 +1,14 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: synologywireguardbuilderdocker:latest
+    steps:
+        - name: Checkout Project
+          uses: actions/checkout@v1
+        - name: Build
+          run: |
+            IS_IN_CONTAINER=1
+            PACKAGE_ARCH=apollolake
+            DSM_VER=6.2
+            bash build.sh
