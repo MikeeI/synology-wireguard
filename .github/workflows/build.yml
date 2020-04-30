@@ -12,8 +12,6 @@ jobs:
     steps:
     # Those steps are executed directly on the VM
     - run: echo $HOME
-    - name: BUILD BASH
-    # Those steps are actions, which may run inside a container
     - uses: actions/checkout@v1
     - run: ls -lah
 
