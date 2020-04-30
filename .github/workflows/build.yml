@@ -11,5 +11,4 @@ jobs:
       run: touch $HOME/stuff.txt
     # Those steps are actions, which may run inside a container
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/my-action
     - uses: docker://dohubin/synologywireguardbuilderdocker:latest
