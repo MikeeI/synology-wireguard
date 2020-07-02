@@ -13,5 +13,5 @@ jobs:
     # Those steps are executed directly on the VM
     - run: echo $HOME
     - uses: actions/checkout@v1
-    - run: sudo ls -lah
+    - run: ls -lah
     - run: sudo bash build.sh
