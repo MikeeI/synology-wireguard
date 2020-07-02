@@ -14,4 +14,4 @@ jobs:
     - run: echo $HOME
     - uses: actions/checkout@v1
     - run: ls -lah
-    - run: sudo bash build.sh
+    - run: bash build.sh
