@@ -13,4 +13,4 @@ RUN apt-get update \
 
 COPY . /source/WireGuard
 
-#ENTRYPOINT exec /source/WireGuard/build.sh
+ENTRYPOINT exec /source/WireGuard/build.sh
