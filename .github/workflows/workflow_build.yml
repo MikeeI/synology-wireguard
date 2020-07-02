@@ -3,10 +3,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-20.04
-    env:
-        IS_IN_CONTAINER: 1
-        PACKAGE_ARCH: x64
-        DSM_VER: 6.2
+    
     steps:
     # Those steps are executed directly on the VM
     - run: export IS_IN_CONTAINER=1 PACKAGE_ARCH=x64 DSM_VER=6.2
@@ -14,4 +11,8 @@ jobs:
     - run: echo $HOME
     - uses: actions/checkout@v1
     - run: sudo ls -lah
+      env:
+        IS_IN_CONTAINER: 1
+        PACKAGE_ARCH: x64
+        DSM_VER: 6.2
     - run: sudo bash build.sh
