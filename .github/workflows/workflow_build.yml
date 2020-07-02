@@ -12,5 +12,5 @@ jobs:
     - run: sudo apt-get update && sudo apt-get -qy install git python3 wget ca-certificates xz-utils
     - run: echo $HOME
     - uses: actions/checkout@v1
-    - run: ls -lah
-    - run: bash build.sh
+    - run: sudo ls -lah
+    - run: sudo bash build.sh
