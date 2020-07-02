@@ -1,14 +1,12 @@
-name: CI_BUILD
+name: WORKFLOW_BUILD
 on: [push]
 jobs:
   build:
-    container: 
-      image: dohubin/synologywireguardbuilderdocker:latest
-      env:
+    runs-on: dohubin/synologywireguardbuilderdocker:latest
+    env:
         IS_IN_CONTAINER: 1
         PACKAGE_ARCH: x64
         DSM_VER: 6.2
-    runs-on: ubuntu-18.04 # linux required if you want to use docker
     steps:
     # Those steps are executed directly on the VM
     - run: echo $HOME
