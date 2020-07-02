@@ -1,8 +1,5 @@
 #!/bin/bash
-if [ -z ${IS_IN_CONTAINER+x} ]; then
-    echo "This script expect to be run inside a docker container" 1>&2
-    exit 1
-fi
+
 
 if [ -z ${PACKAGE_ARCH+x} ]; then
     echo "PACKAGE_ARCH is undefined. Please find and set you package arch:" 1>&2
