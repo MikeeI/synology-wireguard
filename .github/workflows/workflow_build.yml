@@ -2,7 +2,7 @@ name: WORKFLOW_BUILD
 on: [push]
 jobs:
   build:
-    runs-on: dohubin/synologywireguardbuilderdocker:latest
+    runs-on: ubuntu-20.04
     env:
         IS_IN_CONTAINER: 1
         PACKAGE_ARCH: x64
