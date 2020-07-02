@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     env:
-        IS_IN_CONTAINER: 0
+        IS_IN_CONTAINER: 1
         PACKAGE_ARCH: x64
         DSM_VER: 6.2
     steps:
