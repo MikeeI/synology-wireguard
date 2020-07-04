@@ -1,5 +1,5 @@
 name: CI_BUILD
-on: [push]
+on: [pull_request]
 jobs:
   build:
     container: 
