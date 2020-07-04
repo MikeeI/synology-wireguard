@@ -12,7 +12,7 @@ jobs:
         source ~/.bashrc
         echo $ENV
     - name: master
-    - uses: actions/checkout@v
+      uses: actions/checkout@v
     - uses: allenevans/set-env@v1.0.0
       with:
         MY_ENV_VAR: 'my value'
