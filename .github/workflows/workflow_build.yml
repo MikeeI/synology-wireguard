@@ -13,5 +13,5 @@ jobs:
            sudo apt-get update && sudo apt-get -qy install git python3 wget ca-certificates xz-utils |
            echo $HOME |
            echo $PACKAGE_ARCH |
-           sudo cp . /source/Wireguard |
+           sudo cp -r . /source/Wireguard |
            sudo bash build.sh
