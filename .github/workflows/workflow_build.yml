@@ -6,6 +6,7 @@ jobs:
     steps:
     - name: master
       uses: actions/checkout@v1
+    - name: running 
       run: echo "export PACKAGE_ARCH=x64" > ~/.bashrc |
            IS_IN_CONTAINER=1 PACKAGE_ARCH=x64 DSM_VER=6.2 |
            sudo apt-get update && sudo apt-get -qy install git python3 wget ca-certificates xz-utils |
