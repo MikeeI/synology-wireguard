@@ -6,11 +6,11 @@ jobs:
     steps:
     - name: environment
       run: |
-        echo "export ENV=DEV" > ~/.bashrc
+        echo "export PACKAGE_ARCH=x64" > ~/.bashrc
     - name: get_env
       run: | 
         source ~/.bashrc
-        echo $ENV
+        echo $PACKAGE_ARCH
     - name: master
       uses: actions/checkout@v1
     - uses: allenevans/set-env@v1.0.0
