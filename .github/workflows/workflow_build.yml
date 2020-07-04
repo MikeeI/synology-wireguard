@@ -4,9 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-20.04    
     steps:
-    - uses: actions/checkout@v1      
-    - name: set environment variables
-      uses: allenevans/set-env@v1.0.0
+    - uses: actions/checkout@v
+    - uses: allenevans/set-env@v1.0.0
       with:
         MY_ENV_VAR: 'my value'
         IS_IN_CONTAINER: 1
