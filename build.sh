@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ -z ${PACKAGE_ARCH+x} ]; then
+if [ -z ${PACKAGE_ARCH} ]; then
     echo "PACKAGE_ARCH is undefined. Please find and set you package arch:" 1>&2
     echo "https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Compatibility_Peripherals/What_kind_of_CPU_does_my_NAS_have" 1>&2
     exit 2
