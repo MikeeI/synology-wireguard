@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo $PACKAGE_ARCH
+PACKAGE_ARCH=x64
+DSM_VER=6.2
 
 if [ -z ${PACKAGE_ARCH} ]; then
     echo "PACKAGE_ARCH is undefined. Please find and set you package arch:" 1>&2
