@@ -19,7 +19,7 @@ jobs:
         IS_IN_CONTAINER: 1
         PACKAGE_ARCH: "x64"
         DSM_VER: 6.2
-    - run: sudo export IS_IN_CONTAINER=1 PACKAGE_ARCH=x64 DSM_VER=6.2
+    - run: export IS_IN_CONTAINER=1 PACKAGE_ARCH=x64 DSM_VER=6.2
     - run: sudo apt-get update && sudo apt-get -qy install git python3 wget ca-certificates xz-utils
     - run: echo $HOME
     - run: echo $PACKAGE_ARCH
