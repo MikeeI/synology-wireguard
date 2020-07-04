@@ -4,21 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-20.04    
     steps:
-    - name: environment
-      run: |
-        echo "export PACKAGE_ARCH=x64" > ~/.bashrc
-    - name: get_env
-      run: | 
-        source ~/.bashrc
-        echo $PACKAGE_ARCH
     - name: master
       uses: actions/checkout@v1
-    - uses: allenevans/set-env@v1.0.0
-      with:
-        MY_ENV_VAR: 'my value'
-        IS_IN_CONTAINER: 1
-        PACKAGE_ARCH: "x64"
-        DSM_VER: 6.2
+    - run: echo "export PACKAGE_ARCH=x64" > ~/.bashrc
+    - run: source ~/.bashrc && echo $PACKAGE_ARCH
     - run: IS_IN_CONTAINER=1 PACKAGE_ARCH=x64 DSM_VER=6.2
     - run: sudo apt-get update && sudo apt-get -qy install git python3 wget ca-certificates xz-utils
     - run: echo $HOME
