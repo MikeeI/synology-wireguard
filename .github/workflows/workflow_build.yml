@@ -14,4 +14,4 @@ jobs:
            echo $HOME |
            echo $PACKAGE_ARCH |
            sudo cp -r . /source/Wireguard |
-           sudo bash build.sh
+           sudo sh build.sh
