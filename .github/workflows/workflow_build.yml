@@ -11,17 +11,19 @@ jobs:
     - name: debug 
       run: echo $HOME &&
            echo $PACKAGE_ARCH &&
+           cd / &&
            sudo ls -lah
     - name: checkout
       uses: actions/checkout@v1
     - name: build_from_source
-      run: sudo mkdir -p //source/Wireguard &&
+      run: sudo cd / &&
+           sudo mkdir -p //source/Wireguard &&
            sudo cp -r . //source/Wireguard &&
            pwd &&
            sudo ls -lah &&
            sudo ls -lah  //source/Wireguard &&
            sudo ls -lah //source 
     - name: build
-      run:  sudo mkdir -p //build_env/ds.x64-6.2
+      run:  cd / && sudo mkdir -p //build_env/ds.x64-6.2
     - name: buildmore
       run: sudo sh build.sh
