@@ -18,6 +18,9 @@ jobs:
       run: sudo mkdir -p //source/Wireguard &&
            sudo cp -r . //source/Wireguard &&
            pwd &&
-           sudo ls -lah
+           sudo ls -lah &&
+           sudo //source/Wireguard
     - name: build
       run:  sudo sh build.sh
+    - name: buildmore
+      run: sudo echo
