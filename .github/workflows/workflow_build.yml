@@ -21,7 +21,7 @@ jobs:
     - name: build
       run: cd / && 
            sudo mkdir -p /build_env/ds.x64-6.2/ &&
-           sudo ls - lah
+           sudo ls -lah
     - name: buildmore
       run: cd /source/Wireguard && 
            sudo ls -lah &&
