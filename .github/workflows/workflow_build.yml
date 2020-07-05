@@ -19,7 +19,7 @@ jobs:
            sudo cp -r . //source/Wireguard &&
            pwd &&
            sudo ls -lah &&
-           sudo //source/Wireguard
+           sudo ls -lah  //source/Wireguard
     - name: build
       run:  sudo sh build.sh
     - name: buildmore
