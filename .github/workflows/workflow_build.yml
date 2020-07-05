@@ -21,6 +21,6 @@ jobs:
            sudo ls -lah &&
            sudo ls -lah  //source/Wireguard
     - name: build
-      run:  sudo sh build.sh
+      run:  sudo mkdir -p /build_env
     - name: buildmore
-      run: sudo echo
+      run: sudo sh build.sh
