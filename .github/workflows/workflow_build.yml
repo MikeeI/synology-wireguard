@@ -24,5 +24,5 @@ jobs:
            sudo ls - lah
     - name: buildmore
       run: cd /source/Wireguard && 
-           ls -lah &&
+           sudo ls -lah &&
            sudo sh /source/Wireguard/build.sh
