@@ -53,6 +53,8 @@ if [ -z ${HAS_MEMNEQ+x} ]; then
     fi
 fi
 
+pwd
+
 # Build packages
 #   -p              package arch
 #   -v              DSM version
