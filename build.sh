@@ -24,7 +24,7 @@ set -e
 
 # Fetch Synology toolchain
 if [ ! -d /pkgscripts-ng ]; then
-    git clone https://github.com/Mikeel/pkgscripts-ng/
+    git clone https://github.com/MikeeI/pkgscripts-ng
 fi
 
 # Install the toolchain for the given package arch and DSM version
