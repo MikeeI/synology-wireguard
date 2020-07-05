@@ -17,14 +17,14 @@ jobs:
       uses: actions/checkout@v1
     - name: build_from_source
       run: cd / &&
-           sudo mkdir -p //source/Wireguard &&
-           sudo cp -r . //source/Wireguard &&
+           sudo mkdir -p /source/Wireguard &&
+           sudo cp -r . /source/Wireguard &&
            pwd &&
            sudo ls -lah &&
-           sudo ls -lah  //source/Wireguard &&
-           sudo ls -lah //source 
+           sudo ls -lah  /source/Wireguard &&
+           sudo ls -lah /source 
     - name: build
       run: cd / && 
-           sudo mkdir -p //build_env/ds.x64-6.2
+           sudo mkdir -p /build_env/ds.x64-6.2
     - name: buildmore
       run: sudo sh build.sh
