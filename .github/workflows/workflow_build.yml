@@ -15,7 +15,8 @@ jobs:
     - name: checkout
       uses: actions/checkout@v1
     - name: build_from_source
-      run: sudo cp -r . /source/Wireguard |
+      run: sudo mkdir -p /source/Wireguard |
+           sudo cp -r . /source/Wireguard |
            pwd |
            sudo ls -lah
     - name: build
