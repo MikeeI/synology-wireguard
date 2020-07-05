@@ -20,7 +20,8 @@ jobs:
            sudo cp -r . /source/Wireguard
     - name: build
       run: cd / && 
-           sudo mkdir -p /build_env/ds.x64-6.2
+           sudo mkdir -p /build_env/ds.x64-6.2/ &&
+           ls - lah
     - name: buildmore
       run: cd /source/Wireguard && 
            ls -lah &&
