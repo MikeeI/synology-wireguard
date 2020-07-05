@@ -31,6 +31,8 @@ fi
 build_env="/build_env/ds.$PACKAGE_ARCH-$DSM_VER"
 echo $build_env
 
+cd $build_env
+
 if [ ! -d "$build_env" ]; then
     pkgscripts-ng/EnvDeploy -p $PACKAGE_ARCH -v $DSM_VER
 
