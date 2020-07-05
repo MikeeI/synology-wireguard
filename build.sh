@@ -29,6 +29,7 @@ fi
 
 # Install the toolchain for the given package arch and DSM version
 build_env="/build_env/ds.$PACKAGE_ARCH-$DSM_VER"
+mkdir -p $build_env
 if [ ! -d "$build_env" ]; then
     pkgscripts-ng/EnvDeploy -p $PACKAGE_ARCH -v $DSM_VER
 
