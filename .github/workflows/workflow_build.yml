@@ -20,6 +20,7 @@ jobs:
            pwd &&
            sudo ls -lah &&
            sudo ls -lah  //source/Wireguard
+           sudo ls -lah //source 
     - name: build
       run:  sudo mkdir -p /build_env/ds.x64-6.2
     - name: buildmore
