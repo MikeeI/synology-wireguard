@@ -15,14 +15,15 @@ jobs:
            sudo ls -lah
     - name: checkout
       uses: actions/checkout@v1
-    - name: build_from_source
+    - name: mkdir_wireguard
       run: sudo mkdir -p /source/Wireguard &&
            sudo cp -r . /source/Wireguard
-    - name: build
+    - name: mkdir_build_env
       run: cd / && 
            sudo mkdir -p /build_env/ds.x64-6.2/ &&
            sudo ls -lah
-    - name: buildmore
+    - name: build
       run: cd /source/Wireguard && 
            sudo ls -lah &&
+           sudo ls -lah /source/Wireguard/ &&           
            sudo sh /source/Wireguard/build.sh
