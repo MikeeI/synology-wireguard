@@ -26,4 +26,4 @@ jobs:
       run: cd /source/Wireguard && 
            sudo ls -lah &&
            sudo ls -lah /source/Wireguard/ &&           
-           sudo bash /source/Wireguard/build.sh
+           sudo bash build.sh
