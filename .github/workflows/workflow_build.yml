@@ -1,5 +1,5 @@
 name: WORKFLOW_BUILD
-on: [push]
+on: [pull]
 jobs:
   build:
     runs-on: ubuntu-20.04    
