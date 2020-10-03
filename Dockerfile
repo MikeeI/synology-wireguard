@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV IS_IN_CONTAINER 1
 ENV PACKAGE_ARCH apollolake
