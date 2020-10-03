@@ -15,6 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag wgdo && docker run wgdo
+      run: docker build . --file Dockerfile --tag wgdo
+    - name: Run
+      run: docker run wgdo
       
       
