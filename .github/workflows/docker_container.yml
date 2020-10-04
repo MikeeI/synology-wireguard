@@ -5,5 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     container: dohubin/synologywireguardbuilderdocker:latest
     steps:
-        - name: Checkout Project
-          uses: actions/checkout@v2
+    - name: Checkout Project
+      uses: actions/checkout@v2   
+    - name: LS
+      run: ls -lah && ls -lah /
+
