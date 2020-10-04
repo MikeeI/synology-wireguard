@@ -1,18 +1,22 @@
 #!/bin/bash
+
+PACKAGE_ARCH=x64
+DSM_VER="6.2"
+
 if [ -z ${IS_IN_CONTAINER+x} ]; then
     echo "This script expect to be run inside a docker container" 1>&2
-    exit 1
+    
 fi
 
 if [ -z ${PACKAGE_ARCH+x} ]; then
     echo "PACKAGE_ARCH is undefined. Please find and set you package arch:" 1>&2
     echo "https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Compatibility_Peripherals/What_kind_of_CPU_does_my_NAS_have" 1>&2
-    exit 2
+    
 fi
 
 if [ -z ${DSM_VER+x} ]; then
     echo "DSM_VER is undefined. This should a version number like 6.2" 1>&2
-    exit 3
+    
 fi
 
 # Ensure that we are working directly in the root file system. Though this
