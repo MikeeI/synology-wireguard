@@ -28,6 +28,8 @@ fi
 # Download all necessary tarballs before calling into the docker containers.
 echo "Downloading environment tarballs"
 url_base="https://sourceforge.net/projects/dsgpl/files/toolkit/DSM$VER"
+mkdir -p toolkit_tarballs/
+
 pushd toolkit_tarballs/
 if [ ! -f base_env-$VER.txz ]; then
     wget -q --show-progress "$url_base/base_env-$VER.txz"
