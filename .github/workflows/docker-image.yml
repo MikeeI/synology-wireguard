@@ -2,9 +2,9 @@ name: Docker Make Image
 
 on:
   push:
-    branches: [ codespace-1 ]
+    branches: [ codespace-2 ]
   pull_request:
-    branches: [ codespace-1 ]
+    branches: [ codespace-2 ]
 
 jobs:
 
