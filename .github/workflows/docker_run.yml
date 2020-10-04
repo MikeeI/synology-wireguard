@@ -30,6 +30,11 @@ jobs:
     - name: LS
       run: ls -lah artifacts
     - name: LS tarballs
-      run: ls -lahR /toolkit_tarballs
+      run: ls -lahR artifacts
     - name: pwd
       run: pwd
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: artifacts # or path/to/artifact
