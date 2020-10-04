@@ -1,5 +1,5 @@
 name: Docker Run
-on: push 
+on: [push]
 
 jobs:
 
