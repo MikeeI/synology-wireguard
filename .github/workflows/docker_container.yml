@@ -4,3 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: dohubin/synologywireguardbuilderdocker:latest
+    steps:
+        - name: Checkout Project
+          uses: actions/checkout@v2
