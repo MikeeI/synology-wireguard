@@ -9,3 +9,7 @@ jobs:
       run: docker build -t synobuild . --file Dockerfile
     - name: Run
       run: sudo docker run --rm --privileged --env PACKAGE_ARCH=armada38x --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
+    - uses: actions/upload-artifact@v2
+      with:
+         name: my-artifact
+         path: toolkit_tarballs
