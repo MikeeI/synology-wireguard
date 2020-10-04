@@ -1,4 +1,4 @@
-name: WORKFLOW_BUILD
+name: Docker Run
 on: [push]
 jobs:
   build:
