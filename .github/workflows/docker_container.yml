@@ -1,4 +1,4 @@
-name: CI
+name: Docker Container
 on: [push]
 jobs:
   build:
