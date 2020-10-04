@@ -102,4 +102,7 @@ echo "==========="
 #cat "$build_env/logs.install"
 echo
 
+ls -lah
+ls -lahr /toolkit_tarballs
+
 exit $pkg_status
