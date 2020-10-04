@@ -94,12 +94,12 @@ pkg_status=$?
 
 echo "Build log"
 echo "========="
-cat "$build_env/logs.build"
+#cat "$build_env/logs.build"
 echo
 
 echo "Install log"
 echo "==========="
-cat "$build_env/logs.install"
+#cat "$build_env/logs.install"
 echo
 
 exit $pkg_status
