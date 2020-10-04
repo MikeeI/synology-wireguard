@@ -34,8 +34,10 @@ echo "WireGuard version:        $WIREGUARD_VERSION"
 echo "WireGuard tools version:  $WIREGUARD_TOOLS_VERSION"
 echo "libmnl version:           $LIBMNL_VERSION"
 echo
+echo "pwd"
+pwd
 
-mkdir -p toolkit_tarballs
+#mkdir -p toolkit_tarballs
 
 # Fetch Synology toolchain
 if [[ ! -d /pkgscripts-ng ]] || [ -z "$(ls -A /pkgscripts-ng)" ]; then
@@ -105,7 +107,10 @@ echo "==========="
 #cat "$build_env/logs.install"
 echo
 
+echo "directory ls"
 ls -lah
+echo
+echo "directory ls toolkit_tarballs"
 ls -lahr toolkit_tarballs
 
 exit $pkg_status
