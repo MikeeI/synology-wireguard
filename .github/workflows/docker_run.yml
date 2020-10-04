@@ -2,10 +2,10 @@ name: Docker Run
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-20.04 
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag synobuild
+      run: docker build -t synobuild . --file Dockerfile
     - name: Run
       run: sudo docker run --rm --privileged --env PACKAGE_ARCH=armada38x --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
