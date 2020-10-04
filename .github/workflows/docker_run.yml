@@ -7,7 +7,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: LS
-      run: ls -lah
+      run: ls -lah && ls -lah /
     - name: Cache Tarballs
       uses: actions/cache@v2
       env:
@@ -24,7 +24,7 @@ jobs:
     - name: Build the Docker image
       run: docker build -t synobuild . --file Dockerfile
     - name: LS
-      run: ls -lah
+      run: ls -lah && ls -lah /
     - name: Run
       run: sudo docker run --rm --privileged --env PACKAGE_ARCH=armada38x --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
     - name: LS
