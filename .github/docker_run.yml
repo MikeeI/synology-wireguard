@@ -1,10 +1,5 @@
-name: Docker Image CI
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+name: Docker Run
+on: push 
 
 jobs:
 
