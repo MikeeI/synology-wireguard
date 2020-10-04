@@ -37,7 +37,7 @@ echo
 
 # Fetch Synology toolchain
 if [[ ! -d /pkgscripts-ng ]] || [ -z "$(ls -A /pkgscripts-ng)" ]; then
-    git clone https://github.com/SynologyOpenSource/pkgscripts-ng
+    git clone --quiet https://github.com/SynologyOpenSource/pkgscripts-ng
 else
     echo "Existing pkgscripts-ng repo found. Pulling latest from origin."
     cd /pkgscripts-ng
