@@ -35,6 +35,8 @@ echo "WireGuard tools version:  $WIREGUARD_TOOLS_VERSION"
 echo "libmnl version:           $LIBMNL_VERSION"
 echo
 
+mkdir -p toolkit_tarballs
+
 # Fetch Synology toolchain
 if [[ ! -d /pkgscripts-ng ]] || [ -z "$(ls -A /pkgscripts-ng)" ]; then
     git clone --quiet https://github.com/SynologyOpenSource/pkgscripts-ng >/dev/null 2>&1
@@ -49,8 +51,8 @@ fi
 build_env="/build_env/ds.$PACKAGE_ARCH-$DSM_VER"
 
 if [ ! -d "$build_env" ]; then
-    if [ -f "/toolkit_tarballs/base_env-$DSM_VER.txz" ] && [ -f "/toolkit_tarballs/ds.$PACKAGE_ARCH-$DSM_VER.env.txz" ] && [ -f "/toolkit_tarballs/ds.$PACKAGE_ARCH-$DSM_VER.dev.txz" ]; then
-        pkgscripts-ng/EnvDeploy -p $PACKAGE_ARCH -v $DSM_VER -t /toolkit_tarballs
+    if [ -f "toolkit_tarballs/base_env-$DSM_VER.txz" ] && [ -f "toolkit_tarballs/ds.$PACKAGE_ARCH-$DSM_VER.env.txz" ] && [ -f "/toolkit_tarballs/ds.$PACKAGE_ARCH-$DSM_VER.dev.txz" ]; then
+        pkgscripts-ng/EnvDeploy -p $PACKAGE_ARCH -v $DSM_VER -t toolkit_tarballs
     else
         pkgscripts-ng/EnvDeploy -p $PACKAGE_ARCH -v $DSM_VER
     fi
@@ -103,6 +105,6 @@ echo "==========="
 echo
 
 ls -lah
-ls -lahr /toolkit_tarballs
+ls -lahr toolkit_tarballs
 
 exit $pkg_status
