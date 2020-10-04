@@ -9,4 +9,4 @@ jobs:
     - name: LS
       run: ls -lah && ls -lah /
     - name: Build
-      run: bash release.sh
+      run: sudo bash release.sh
