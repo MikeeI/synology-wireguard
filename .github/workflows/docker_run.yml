@@ -5,29 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-    
-    - name: Cache BuildENV
+      uses: actions/checkout@v2     
+    - name: Cache Tarballs
       uses: actions/cache@v2
       env:
-        cache-name: cache-node-modules
+        cache-name: cache-tarballs
       with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: /build_env/ds.x64-6.2
+        path: /toolkit_tarnballs
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/base_env-6.2.txz') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-          
-    - name: Cache PKG
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-pkgscripts-ng
-      with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: /pkgscripts-ng
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
@@ -39,8 +24,10 @@ jobs:
     - name: Run
       run: sudo docker run --rm --privileged --env PACKAGE_ARCH=armada38x --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
     - name: LS
-      run: ls -lah && ls -lah / && ls -lah /home
+      run: ls -lah artifacts
+    - name: pwd
+      run: pwd
     - uses: actions/upload-artifact@v2
       with:
          name: my-artifact
-         path: /result_spk
+         path: /
