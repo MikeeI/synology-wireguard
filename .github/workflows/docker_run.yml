@@ -10,7 +10,7 @@ jobs:
     - name: Run
       run: sudo docker run --rm --privileged --env PACKAGE_ARCH=armada38x --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
     - name: LS
-      run: ls -lah && ls -lah / && ls -lah toolkit_tarballs && ls -lah /root
+      run: ls -lah && ls -lah / && ls -lah /root
     - uses: actions/upload-artifact@v2
       with:
          name: my-artifact
