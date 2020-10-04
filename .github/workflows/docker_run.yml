@@ -29,7 +29,3 @@ jobs:
       run: ls -lahR /toolkit_tarballs
     - name: pwd
       run: pwd
-    - uses: actions/upload-artifact@v2
-      with:
-         name: my-artifact
-         path: .
