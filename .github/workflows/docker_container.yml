@@ -1,0 +1,6 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: dohubin/synologywireguardbuilderdocker:latest
