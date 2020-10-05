@@ -10,7 +10,7 @@ jobs:
       - name: SPK Generation
         run: sudo bash multi_build.sh
         env:
-          ARCHS: ("apollolake")
+          arch: "apollolake"
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
