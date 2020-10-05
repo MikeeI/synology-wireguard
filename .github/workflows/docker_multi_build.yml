@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: SPK Generation
-        run: sudo bash multi_build.sh "apollolake"
+        run: sudo bash multi_build.sh apollolake
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
