@@ -29,6 +29,8 @@ jobs:
   build_3_avoton:
     runs-on: ubuntu-latest
     steps:
+      - name: run
+        run: echo  ${{ github.job.name }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: SPK Generation
