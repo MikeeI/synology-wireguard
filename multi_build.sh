@@ -1,5 +1,6 @@
 #!/bin/bash
 VER=6.2
+arch="apollolake"
 set -e
 
 # Check that we are running as root
@@ -25,20 +26,19 @@ pushd toolkit_tarballs/
 if [ ! -f base_env-$VER.txz ]; then
     aria2c -q -x 8 "$url_base/base_env-$VER.txz?use_mirror=kumisystems"
 fi
-for arch in ${ARCHS[@]}; do
+
     if [ ! -f ds.$arch-$VER.dev.txz ]; then
         aria2c -q -x 8 "$url_base/ds.$arch-$VER.dev.txz?use_mirror=kumisystems"
     fi
     if [ ! -f ds.$arch-$VER.env.txz ]; then
         aria2c -q -x 8 "$url_base/ds.$arch-$VER.env.txz?use_mirror=kumisystems"
     fi
-done
 popd
 
 # Ensure that we are using an up to date docker image
 docker build -t synobuild .
 
-for arch in ${ARCHS[@]}; do
+
     echo "Building '$arch'"
 
     # Remove old artifact directory
@@ -56,7 +56,7 @@ for arch in ${ARCHS[@]}; do
         synobuild
 
     mv artifacts/WireGuard-*/* target/
-done
+
 
 echo "Current Folder"
 ls -lah
