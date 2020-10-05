@@ -8,7 +8,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: APT Install
-      run: sudp apt-get install aria2
+      run: sudo apt-get install aria2
     - name: WGET 
       run: sudo wget -q --show-progress https://sourceforge.net/projects/dsgpl/files/base_env-6.2.txz
     - name: WGET Mirror kumisystems
