@@ -10,3 +10,8 @@ jobs:
       run: ls -lah && ls -lah /
     - name: Build
       run: sudo bash release.sh
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: artifacts 
