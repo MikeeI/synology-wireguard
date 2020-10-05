@@ -8,6 +8,19 @@ jobs:
       uses: actions/checkout@v2
     - name: LS
       run: ls -lah && ls -lah /
+    - name: Create Toolkit_Tarballs
+      run: mkdir -p toolkit_tarballs
+    - name: Cache Tarballs
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-tarballs
+      with:
+        path: /toolkit_tarnballs
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/base_env-6.2.txz') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
     - name: SPK Generation
       run: sudo bash release.sh
     - name: LS
