@@ -62,6 +62,13 @@ for arch in ${ARCHS[@]}; do
     mv artifacts/WireGuard-*/* target/
 done
 
+echo "Current Folder"
+ls -lah
+echo "toolkit_tarballs"
+ls -lah $(pwd)/toolkit_tarballs
+echo "toolkit_tarballs"
+ls -lah toolkit_tarballs
+
 # Clean up artifact directory
 if [ -d artifacts/ ]; then
     rm -rf artifacts/
