@@ -24,13 +24,11 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ github.job }}
+          name: armada38x
           path: target
   build_3_avoton:
     runs-on: ubuntu-latest
     steps:
-      - name: run
-        run: echo  ${{ github.job}}
       - name: Checkout
         uses: actions/checkout@v2
       - name: SPK Generation
@@ -38,5 +36,91 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ github.job.name }}
+          name: ${{ github.job }}
           path: target
+  build_4_braswell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh braswell
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target  
+  build_5_broadwell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh broadwell
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target 
+  build_6_cedarview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh cedarview
+      - name: Upload 
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target           
+  build_7_denverton:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh denverton
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target            
+  build_8_rtd1296:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh rtd1296
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target            
+  build_9_x64:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh x64
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.job }}
+          path: target            
+                    
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+     
