@@ -1,0 +1,23 @@
+name: MultiBuild
+'on':
+  - push
+jobs:
+  build_1_apollolake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: SPK Generation
+        run: sudo bash multi_build.sh
+        env:
+          ARCHS: ("apollolake")
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: apollolake
+          path: target
+  build_2_armada38x:
+    runs-on: ubuntu-latest
+    teps:
+      - name: Checkout
+        uses: actions/checkout@v2
