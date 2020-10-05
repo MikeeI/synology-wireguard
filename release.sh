@@ -26,7 +26,7 @@ if [ ! -d target/ ]; then
 fi
 
 sudo apt update -yq
-sudo apt install aria2c -yq
+sudo apt install aria2 -yq
 
 # Download all necessary tarballs before calling into the docker containers.
 echo "Downloading environment tarballs"
