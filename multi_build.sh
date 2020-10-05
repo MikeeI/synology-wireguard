@@ -1,6 +1,9 @@
 #!/bin/bash
 VER=6.2
 arch=$1
+
+echo $arch
+
 set -e
 
 # Check that we are running as root
