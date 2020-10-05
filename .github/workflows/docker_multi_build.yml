@@ -24,7 +24,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ jobs.<job_id>.name }}
+          name: ${{ github.job }}
           path: target
   build_3_avoton:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ jobs.<job_id>.name }}
+          name: ${{ github.job.name }}
           path: target
