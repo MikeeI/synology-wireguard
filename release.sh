@@ -35,14 +35,14 @@ sudo mkdir -p toolkit_tarballs/
 
 pushd toolkit_tarballs/
 if [ ! -f base_env-$VER.txz ]; then
-    aria2c -q "$url_base/base_env-$VER.txz"
+    aria2c -q -x 8 "$url_base/base_env-$VER.txz"
 fi
 for arch in ${ARCHS[@]}; do
     if [ ! -f ds.$arch-$VER.dev.txz ]; then
-        aria2c -q "$url_base/ds.$arch-$VER.dev.txz"
+        aria2c -q -x 8 "$url_base/ds.$arch-$VER.dev.txz"
     fi
     if [ ! -f ds.$arch-$VER.env.txz ]; then
-        aria2c -q "$url_base/ds.$arch-$VER.env.txz"
+        aria2c -q -x 8 "$url_base/ds.$arch-$VER.env.txz"
     fi
 done
 popd
