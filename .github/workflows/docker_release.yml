@@ -10,6 +10,16 @@ jobs:
       run: ls -lah && ls -lah /
     - name: Build
       run: sudo bash release.sh
+
+    - name: LS
+      run: ls -lah && ls -
+    - name: LS A
+      run: ls -lah artifacts
+    - name: LS tarballs
+      run: ls -lahR artifacts
+    - name: pwd
+      run: pwd
+
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
