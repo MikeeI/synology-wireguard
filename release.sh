@@ -25,6 +25,9 @@ if [ ! -d target/ ]; then
     mkdir target/
 fi
 
+sudo apt update -yq
+sudo apt install aria2c -yq
+
 # Download all necessary tarballs before calling into the docker containers.
 echo "Downloading environment tarballs"
 url_base="https://sourceforge.net/projects/dsgpl/files/toolkit/DSM$VER"
@@ -32,14 +35,14 @@ sudo mkdir -p toolkit_tarballs/
 
 pushd toolkit_tarballs/
 if [ ! -f base_env-$VER.txz ]; then
-    wget -q "$url_base/base_env-$VER.txz"
+    aria2c -q "$url_base/base_env-$VER.txz"
 fi
 for arch in ${ARCHS[@]}; do
     if [ ! -f ds.$arch-$VER.dev.txz ]; then
-        wget -q "$url_base/ds.$arch-$VER.dev.txz"
+        aria2c -q "$url_base/ds.$arch-$VER.dev.txz"
     fi
     if [ ! -f ds.$arch-$VER.env.txz ]; then
-        wget -q "$url_base/ds.$arch-$VER.env.txz"
+        aria2c -q "$url_base/ds.$arch-$VER.env.txz"
     fi
 done
 popd
