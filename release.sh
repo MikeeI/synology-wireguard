@@ -2,8 +2,15 @@
 VER=6.2
 ARCHS=(
     "apollolake"
+    "armada38x"
+    "avoton"
+    "braswell"
+    "broadwell"
+    "cedarview"
+    "denverton"
+    "rtd1296"
+    "x64"
 )
-
 set -e
 
 # Check that we are running as root
