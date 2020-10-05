@@ -1,0 +1,19 @@
+  
+name: Docker Release
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: APT Install
+      run: sudp apt-get install aria2
+    - name: WGET 
+      run: sudo wget -q --show-progress https://sourceforge.net/projects/dsgpl/files/base_env-6.2.txz
+    - name: WGET Mirror kumisystems
+      run: sudo wget -q --show-progress https://sourceforge.net/projects/dsgpl/files/base_env-6.2.txz?use_mirror=kumisystems
+    - name: ARIA2 
+      run: sudo aria2c -x 8 https://sourceforge.net/projects/dsgpl/files/base_env-6.2.txz
+    - name: ARIA2 Mirror kumisystems
+      run: sudo aria2c -x 8 https://sourceforge.net/projects/dsgpl/files/base_env-6.2.txz?use_mirror=kumisystems
