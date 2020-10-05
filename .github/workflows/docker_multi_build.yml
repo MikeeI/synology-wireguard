@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run
-        run: echo  ${{ github.job.name }}
+        run: echo  ${{ github.job}}
       - name: Checkout
         uses: actions/checkout@v2
       - name: SPK Generation
