@@ -1,6 +1,6 @@
 #!/bin/bash
 VER=6.2
-arch="apollolake"
+arch=$1
 set -e
 
 # Check that we are running as root
