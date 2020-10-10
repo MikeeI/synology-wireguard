@@ -2,6 +2,15 @@
 name: SPEEDTEST 
 on: [push]
 jobs:
+  build_aria_hetzner:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: APT Install
+      run: sudo apt-get install aria2
+    - name: ARIA2 
+      run: sudo aria2c -x 8 https://speed.hetzner.de/10GB.bin
   build:
     runs-on: ubuntu-latest
     steps:
