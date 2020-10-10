@@ -1,6 +1,6 @@
 name: MultiBuild
 'on':
-  - push
+  - pull_request
 jobs:
   build_1_apollolake:
     runs-on: ubuntu-latest
