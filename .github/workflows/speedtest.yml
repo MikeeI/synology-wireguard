@@ -10,7 +10,7 @@ jobs:
     - name: APT Install
       run: sudo apt-get install aria2
     - name: ARIA2 
-      run: sudo aria2c -x 8 http://speed.hetzner.de/10GB.bin
+      run: sudo aria2c --check-certificate=false -x 8 https://speed.hetzner.de/10GB.bin
   build:
     runs-on: ubuntu-latest
     steps:
