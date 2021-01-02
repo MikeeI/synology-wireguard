@@ -1,3 +1,6 @@
+.. image:: https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMikeeI%2Fsynology-wireguard%2Fblob%2Fcodespace-1%2FREADME.rst&count_bg=%233FDD16&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false
+
+
 WireGuard support for Synology NAS
 ==================================
 This package adds WireGuard support for Synology NAS drives. It provides the
